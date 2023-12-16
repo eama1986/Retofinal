@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mascotas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      background-color: #f8f9fa;
+      overflow-x: hidden;
+    }
+
+    #side-menu {
+      position: fixed;
+      width: 250px;
+      height: 100%;
+      background-color: #fff;
+      padding-top: 20px;
+      padding-left: 10px;
+      box-shadow: 1px 0 3px rgba(0,0,0,0.1);
+    }
+
+    #main-content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #343a40;
+    }
+
+    #main-menu {
+      margin-top: 20px;
+    }
+
+    #map-btn, #whatsapp-icon {
+      width: 100%;
+    }
+
+    .raza-container {
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .raza-title {
+      font-size: 1.8em;
+      color: #343a40;
+    }
+
+    .raza-info {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .raza-info li {
+      color: #6c757d;
+      margin-bottom: 10px;
+    }
+
+    .img-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      margin-top: 20px;
+    }
+
+    .img-container img {
+      max-width: 100%;
+      max-height: 200px;
+      margin-right: 10px;
+    }
+
+    #whatsapp-icon {
+      display: none; /* ocultar por defecto en pantallas grandes */
+    }
+
+    @media screen and (max-width: 768px) {
+      #whatsapp-icon {
+        display: block; /* mostrar en pantallas pequeñas */
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+    }
+
+    #side-menu img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="side-menu">
+    <img src="https://i.pinimg.com/originals/4c/96/5a/4c965a28f1760097c4797e62315558f3.png" alt="Refugio Logo">
+    <div id="main-menu">
+      <h1 class="mt-4 mb-4">Amor en Cada Huella</h1>
+      <button class="btn btn-light d-block mb-2" data-bs-toggle="modal" data-bs-target="#mapModal">
+        <img src="https://static.vecteezy.com/system/resources/previews/003/242/360/original/pin-map-icon-location-3d-on-white-transparent-background-free-vector.jpg" alt="Ubicación" width="20" height="20" class="me-2"> Ubicación
+      </button>
+      <button class="btn btn-light d-block mb-2">
+        <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-1.png" alt="WhatsApp" width="20" height="20" class="me-2"> Contacto: 3105449010
+      </button>
+    </div>
+  </div>
+
+  <div id="main-content">
+    <h1 class="mt-4 mb-4">Adopcion</h1>
+    <div id="mascotas-container" class="row"></div>
+  </div>
+
+  <!-- Map Modal -->
+  <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mapModalLabel">Ubicación del Refugio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://maps.google.com/maps?q=4.6487172,-74.2470576&hl=es;z=14&amp;output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Icon -->
+  <a id="whatsapp-icon" href="https://wa.me/1234567890" target="_blank">
+    <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-1.png" alt="WhatsApp" width="50" height="50">
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
